@@ -1,0 +1,29 @@
+unit Click_Alcohol_adc;
+
+uses Click_Alcohol_types;
+
+procedure alcohol_adcInit(); 
+function  alcohol_readADC() :  uint32_t; 
+
+implementation
+
+procedure alcohol_adcInit(); 
+begin
+
+    TRISB := 0x08; 
+    LATB := 0; 
+    ADC1_Init(); 
+
+end;
+
+function  alcohol_readADC() :  uint32_t; 
+var
+    readADC : uint32_t;
+begin
+
+    readADC := ADC1_Read(8); 
+    result := readADC; 
+
+end;
+
+end.

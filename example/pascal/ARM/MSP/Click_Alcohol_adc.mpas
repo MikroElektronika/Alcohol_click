@@ -1,0 +1,28 @@
+unit Click_Alcohol_adc;
+
+uses Click_Alcohol_types;
+
+procedure alcohol_adcInit(); 
+function  alcohol_readADC() :  uint32_t; 
+
+implementation
+
+procedure alcohol_adcInit(); 
+begin
+
+    ADC_Init(); 
+    ADC_Set_Input_Channel(_ADC_CHANNEL_15); 
+
+end;
+
+function  alcohol_readADC() :  uint32_t; 
+var
+    readADC : uint32_t;
+begin
+
+    readADC := ADC_Read(15); 
+    result := readADC; 
+
+end;
+
+end.

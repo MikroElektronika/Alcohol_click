@@ -1,0 +1,5 @@
+unit Click_Alcohol_config;
+
+uses Click_Alcohol_types;
+
+end.

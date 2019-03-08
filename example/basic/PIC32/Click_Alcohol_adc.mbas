@@ -1,0 +1,27 @@
+module Click_Alcohol_adc
+
+include Click_Alcohol_types
+
+sub procedure alcohol_adcInit() 
+sub function  alcohol_readADC() as uint32_t 
+
+implements
+
+sub procedure alcohol_adcInit() 
+
+    TRISB = 0x08 
+    LATB = 0 
+    ADC1_Init() 
+
+end sub
+
+sub function  alcohol_readADC() as uint32_t 
+dim
+    readADC as uint32_t
+
+    readADC = ADC1_Read(8) 
+    result = readADC 
+
+end sub
+
+end.
